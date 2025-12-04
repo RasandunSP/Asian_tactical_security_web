@@ -13,7 +13,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="border-t border-[#E5E7EB] bg-white">
+    <footer className="border-t border-[#E5E7EB] dark:border-[#404040] bg-white dark:bg-[#1a1a1a]">
       <div className="mx-auto max-w-6xl px-4 py-12">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
@@ -24,14 +24,14 @@ export function Footer() {
                 alt="TST Logo"
                 width={40}
                 height={40}
-                className="h-10 w-10 object-contain"
+                className="h-10 w-10 object-contain dark:invert"
                 unoptimized
               />
-              <span className="text-sm font-semibold uppercase tracking-[0.1em] text-[#1F2937]">
+              <span className="text-sm font-semibold uppercase tracking-[0.1em] text-[#1F2937] dark:text-[#F1F5F9]">
                 ASIAN TACTICAL SECURITY
               </span>
             </div>
-            <p className="text-sm text-[#1F2937]/70">
+            <p className="text-sm text-[#1F2937]/70 dark:text-[#F1F5F9]/70">
               Empowering individuals and organizations with practical, effective, and ethical tactical training.
             </p>
             <p className="text-xs uppercase tracking-[0.4em] text-[#B8860B]">Strength · Precision · Integrity</p>
@@ -39,7 +39,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-[#1F2937]">Quick Links</h3>
+            <h3 className="text-sm font-semibold text-[#1F2937] dark:text-[#F1F5F9]">Quick Links</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
@@ -48,7 +48,7 @@ export function Footer() {
                     e.preventDefault()
                     scrollToSection("about")
                   }}
-                  className="text-[#1F2937]/70 transition-colors hover:text-[#B8860B]"
+                  className="text-[#1F2937]/70 dark:text-[#F1F5F9]/70 transition-colors hover:text-[#B8860B]"
                 >
                   About Us
                 </Link>
@@ -60,7 +60,7 @@ export function Footer() {
                     e.preventDefault()
                     scrollToSection("services")
                   }}
-                  className="text-[#1F2937]/70 transition-colors hover:text-[#B8860B]"
+                  className="text-[#1F2937]/70 dark:text-[#F1F5F9]/70 transition-colors hover:text-[#B8860B]"
                 >
                   Services
                 </Link>
@@ -72,7 +72,7 @@ export function Footer() {
                     e.preventDefault()
                     scrollToSection("why-us")
                   }}
-                  className="text-[#1F2937]/70 transition-colors hover:text-[#B8860B]"
+                  className="text-[#1F2937]/70 dark:text-[#F1F5F9]/70 transition-colors hover:text-[#B8860B]"
                 >
                   Why Us
                 </Link>
@@ -84,7 +84,7 @@ export function Footer() {
                     e.preventDefault()
                     scrollToSection("clients")
                   }}
-                  className="text-[#1F2937]/70 transition-colors hover:text-[#B8860B]"
+                  className="text-[#1F2937]/70 dark:text-[#F1F5F9]/70 transition-colors hover:text-[#B8860B]"
                 >
                   Clients
                 </Link>
@@ -94,7 +94,7 @@ export function Footer() {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-[#1F2937]">Services</h3>
+            <h3 className="text-sm font-semibold text-[#1F2937] dark:text-[#F1F5F9]">Services</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
@@ -103,7 +103,7 @@ export function Footer() {
                     e.preventDefault()
                     scrollToSection("services")
                   }}
-                  className="text-[#1F2937]/70 transition-colors hover:text-[#B8860B]"
+                  className="text-[#1F2937]/70 dark:text-[#F1F5F9]/70 transition-colors hover:text-[#B8860B]"
                 >
                   Law Enforcement Training
                 </Link>
@@ -115,7 +115,7 @@ export function Footer() {
                     e.preventDefault()
                     scrollToSection("services")
                   }}
-                  className="text-[#1F2937]/70 transition-colors hover:text-[#B8860B]"
+                  className="text-[#1F2937]/70 dark:text-[#F1F5F9]/70 transition-colors hover:text-[#B8860B]"
                 >
                   Close Protection
                 </Link>
@@ -127,7 +127,7 @@ export function Footer() {
                     e.preventDefault()
                     scrollToSection("services")
                   }}
-                  className="text-[#1F2937]/70 transition-colors hover:text-[#B8860B]"
+                  className="text-[#1F2937]/70 dark:text-[#F1F5F9]/70 transition-colors hover:text-[#B8860B]"
                 >
                   Krav Maga
                 </Link>
@@ -139,7 +139,7 @@ export function Footer() {
                     e.preventDefault()
                     scrollToSection("services")
                   }}
-                  className="text-[#1F2937]/70 transition-colors hover:text-[#B8860B]"
+                  className="text-[#1F2937]/70 dark:text-[#F1F5F9]/70 transition-colors hover:text-[#B8860B]"
                 >
                   Risk Assessment
                 </Link>
@@ -149,8 +149,8 @@ export function Footer() {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-[#1F2937]">Contact</h3>
-            <ul className="space-y-3 text-sm text-[#1F2937]/70">
+            <h3 className="text-sm font-semibold text-[#1F2937] dark:text-[#F1F5F9]">Contact</h3>
+            <ul className="space-y-3 text-sm text-[#1F2937]/70 dark:text-[#F1F5F9]/70">
               <li>
                 <Link
                   href="#contact"
@@ -172,7 +172,7 @@ export function Footer() {
 
         <Separator className="my-8" />
 
-        <div className="flex flex-col gap-4 text-center text-sm text-[#1F2937]/70 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-4 text-center text-sm text-[#1F2937]/70 dark:text-[#F1F5F9]/70 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Asian Tactical Security Training Pvt Ltd. All rights reserved.</p>
           <div className="flex items-center justify-center gap-4">
             <Link
@@ -185,7 +185,7 @@ export function Footer() {
             >
               Privacy Policy
             </Link>
-            <span className="text-[#E5E7EB]">|</span>
+            <span className="text-[#E5E7EB] dark:text-[#404040]">|</span>
             <Link
               href="#home"
               onClick={(e) => {

@@ -177,14 +177,14 @@ export function ServicesSection() {
   }
 
   return (
-    <section id="services" className="bg-white">
+    <section id="services" className="bg-white dark:bg-[#1a1a1a]">
       <div className="mx-auto max-w-7xl px-4 pt-16 pb-24">
         <div className="mb-12">
           <div className="text-left">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#B8860B]">Services</p>
-            <h2 className="mt-4 text-4xl font-bold text-[#1F2937]">Comprehensive Tactical Training Suite</h2>
+            <h2 className="mt-4 text-4xl font-bold text-[#1F2937] dark:text-[#F1F5F9]">Comprehensive Tactical Training Suite</h2>
             <div className="mt-3 flex items-center justify-between gap-4">
-              <p className="max-w-2xl text-lg text-[#1F2937]/80">
+              <p className="max-w-2xl text-lg text-[#1F2937]/80 dark:text-[#F1F5F9]/80">
                 Modular programs that scale from individual readiness to full organizational capability development.
               </p>
               <div className="flex gap-2">
@@ -192,7 +192,7 @@ export function ServicesSection() {
                   variant="outline"
                   size="icon"
                   onClick={handlePrevious}
-                  className="h-10 w-10 rounded-full border-[#B8860B] text-[#B8860B] hover:bg-[#B8860B] hover:text-white"
+                  className="h-10 w-10 rounded-full border-[#B8860B] text-[#B8860B] hover:bg-[#B8860B] hover:text-white dark:border-[#B8860B] dark:text-[#B8860B]"
                   aria-label="Previous service"
                 >
                   <ChevronLeft className="h-5 w-5" />
@@ -201,7 +201,7 @@ export function ServicesSection() {
                   variant="outline"
                   size="icon"
                   onClick={handleNext}
-                  className="h-10 w-10 rounded-full border-[#B8860B] text-[#B8860B] hover:bg-[#B8860B] hover:text-white"
+                  className="h-10 w-10 rounded-full border-[#B8860B] text-[#B8860B] hover:bg-[#B8860B] hover:text-white dark:border-[#B8860B] dark:text-[#B8860B]"
                   aria-label="Next service"
                 >
                   <ChevronRight className="h-5 w-5" />
@@ -218,7 +218,7 @@ export function ServicesSection() {
           {duplicatedServices.map(({ icon: Icon, image, ...service }, index) => (
             <article
               key={`${service.title}-${index}`}
-              className="group min-w-[380px] max-w-[380px] flex-shrink-0 overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white text-left shadow-sm transition hover:-translate-y-1 hover:border-[#B8860B]/40 hover:shadow-lg"
+              className="group min-w-[380px] max-w-[380px] flex-shrink-0 overflow-hidden rounded-2xl border border-[#E5E7EB] dark:border-[#404040] bg-white dark:bg-[#2a2a2a] text-left shadow-sm transition hover:-translate-y-1 hover:border-[#B8860B]/40 hover:shadow-lg"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <Image
@@ -229,13 +229,13 @@ export function ServicesSection() {
                   sizes="380px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                <div className="absolute bottom-4 left-4 inline-flex rounded-full bg-[#FFF7E6] p-3 text-[#B8860B]">
+                <div className="absolute bottom-4 left-4 inline-flex rounded-full bg-[#FFF7E6] dark:bg-[#2a2a2a] p-3 text-[#B8860B]">
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#1F2937]">{service.title}</h3>
-                <p className="mt-3 text-[#1F2937]/75">{service.description}</p>
+                <h3 className="text-xl font-semibold text-[#1F2937] dark:text-[#F1F5F9]">{service.title}</h3>
+                <p className="mt-3 text-[#1F2937]/75 dark:text-[#F1F5F9]/75">{service.description}</p>
               </div>
             </article>
           ))}
