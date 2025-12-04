@@ -6,25 +6,25 @@ const highlights = [
     title: "Integrity & Discipline",
     description:
       "Grounded in core values that prioritize discipline, accountability, and ethical conduct in every engagement.",
-    image: "/Hero_caro/487316894_1765072690919660_301362420649754947_n.jpg",
+    image: "/Hero_caro/20231209_BLP508.jpg",
   },
   {
     title: "Preparedness & Accountability",
     description:
       "Programs built to elevate readiness and professionalism, ensuring teams respond decisively when it matters most.",
-    image: "/Hero_caro/488377084_1771476383612624_2769082243582401381_n.jpg",
+    image: "/Hero_caro/6f8066266e5cd7e79134b0347368ea550d252540.jpg",
   },
   {
     title: "Excellence & Vision",
     description:
       "Focused on becoming Asia's leading authority in tactical defence through innovation and relentless improvement.",
-    image: "/Hero_caro/466119558_18204903907293289_3948555336623019410_n.jpg",
+    image: "/Hero_caro/800x450.jpg",
   },
   {
     title: "Professional Expertise",
     description:
       "Developed by veteran military and law enforcement instructors who translate field experience into training mastery.",
-    image: "/Hero_caro/485094240_1755263041900625_736837625416320923_n.jpg",
+    image: "/Hero_caro/images.jpeg",
   },
 ]
 
