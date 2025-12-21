@@ -10,9 +10,9 @@ import { WhyUsSection } from "@/components/why-us-section"
 
 export default function Home() {
   return (
-    <div className="bg-white dark:bg-[#1a1a1a] text-[#1F2937] dark:text-[#F1F5F9] transition-colors">
+    <div className="min-h-screen bg-white dark:bg-[#1a1a1a] text-[#111827] dark:text-[#F1F5F9] transition-colors duration-300">
       <Navbar />
-      <main>
+      <main className="bg-white dark:bg-[#1a1a1a] transition-colors duration-300">
         <Hero />
         <AboutSection />
         <WhyUsSection />

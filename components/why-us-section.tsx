@@ -30,17 +30,17 @@ const highlights = [
 
 export function WhyUsSection() {
   return (
-    <section id="why-us" className="bg-[#F9FAFB] dark:bg-[#2a2a2a]">
+    <section id="why-us" className="bg-white dark:bg-[#2a2a2a] text-[#111827] dark:text-[#F1F5F9]">
       <div className="mx-auto max-w-6xl px-4 pt-16 pb-24">
         <div className="mb-16 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#B8860B]">Why TST</p>
-          <h2 className="mt-4 text-4xl font-bold text-[#1F2937] dark:text-[#F1F5F9]">Our Commitment: Strength, Precision, Integrity</h2>
+          <p className="text-xs font-heading font-semibold uppercase tracking-[0.5em] text-[#B8860B]">Why TST</p>
+          <h2 className="mt-4 text-4xl font-heading font-bold text-[#111827] dark:text-[#F1F5F9]">Our Commitment: Strength, Precision, Integrity</h2>
         </div>
         <div className="grid gap-8 md:grid-cols-2">
           {highlights.map(({ image, ...highlight }) => (
             <article
               key={highlight.title}
-              className="group flex gap-6 rounded-2xl border border-white dark:border-[#404040] bg-white dark:bg-[#1a1a1a] p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#F59E0B]/40 hover:shadow-lg"
+              className="group flex gap-6 rounded-2xl border border-[#E5E7EB] dark:border-[#404040] bg-[#F9FAFB] dark:bg-[#1a1a1a] p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#B8860B]/40 hover:shadow-lg"
             >
               {/* Left section: Square image (1:1 ratio) */}
               <div className="relative h-32 w-32 flex-shrink-0 overflow-hidden rounded-lg">
@@ -54,8 +54,8 @@ export function WhyUsSection() {
               </div>
               {/* Right section: Text aligned to right */}
               <div className="flex flex-1 flex-col items-end text-right">
-                <h3 className="text-2xl font-semibold text-[#B8860B]">{highlight.title}</h3>
-                <p className="mt-4 text-[#1F2937]/80 dark:text-[#F1F5F9]/80">{highlight.description}</p>
+                <h3 className="text-2xl font-heading font-semibold text-[#B8860B]">{highlight.title}</h3>
+                <p className="mt-4 text-[#111827]/90 dark:text-[#F1F5F9]/80">{highlight.description}</p>
               </div>
             </article>
           ))}

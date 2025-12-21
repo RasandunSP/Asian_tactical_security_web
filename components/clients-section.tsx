@@ -30,11 +30,11 @@ const clients = [
 
 export function ClientsSection() {
   return (
-    <section id="clients" className="bg-[#F9FAFB] dark:bg-[#2a2a2a]">
+    <section id="clients" className="bg-white dark:bg-[#2a2a2a] text-[#111827] dark:text-[#F1F5F9]">
       <div className="mx-auto max-w-6xl px-4 pt-16 pb-16 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#B8860B]">Clients</p>
-        <h2 className="mt-4 text-4xl font-bold text-[#1F2937] dark:text-[#F1F5F9]">Trusted by Sri Lanka's Elite Units</h2>
-        <p className="mx-auto mt-4 max-w-3xl text-lg text-[#1F2937]/80 dark:text-[#F1F5F9]/80">
+        <p className="text-xs font-heading font-semibold uppercase tracking-[0.5em] text-[#B8860B]">Clients</p>
+            <h2 className="mt-4 text-4xl font-heading font-bold text-[#111827] dark:text-[#F1F5F9]">Trusted by Sri Lanka's Elite Units</h2>
+            <p className="mx-auto mt-4 max-w-3xl text-lg text-[#111827]/90 dark:text-[#F1F5F9]/80">
           We proudly support elite defence, law enforcement, and private security teams across Sri Lanka with mission-specific
           training programs.
         </p>
@@ -44,7 +44,7 @@ export function ClientsSection() {
               {[...clients, ...clients, ...clients, ...clients].map((client, index) => (
                 <div
                   key={`${client.name}-${index}`}
-                  className="flex min-w-[280px] items-center gap-4 text-base font-semibold text-[#1F2937]/70 dark:text-[#F1F5F9]/70"
+                      className="flex min-w-[280px] items-center gap-4 text-base font-semibold text-[#111827]/85 dark:text-[#F1F5F9]/70"
                 >
                   <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden">
                     <Image
@@ -64,7 +64,7 @@ export function ClientsSection() {
               {[...clients, ...clients, ...clients, ...clients].map((client, index) => (
                 <div
                   key={`${client.name}-duplicate-${index}`}
-                  className="flex min-w-[280px] items-center gap-4 text-base font-semibold text-[#1F2937]/70 dark:text-[#F1F5F9]/70"
+                      className="flex min-w-[280px] items-center gap-4 text-base font-semibold text-[#111827]/85 dark:text-[#F1F5F9]/70"
                 >
                   <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden">
                     <Image

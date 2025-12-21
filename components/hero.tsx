@@ -6,14 +6,14 @@ import { HeroCarousel } from "@/components/hero-carousel"
 
 export function Hero() {
   return (
-    <section id="home" className="relative bg-gradient-to-b from-[#F9FAFB] to-white">
+    <section id="home" className="relative bg-white dark:bg-[#1a1a1a] text-white">
       <HeroCarousel />
       <div className="relative z-10 mx-auto flex min-h-[90vh] max-w-6xl flex-col items-center justify-center gap-8 px-4 pt-28 pb-32 text-center backdrop-blur-[2px]">
-        <p className="flex items-center justify-center gap-3 text-xs uppercase tracking-[0.4em] text-white [text-shadow:_0_2px_8px_rgb(0_0_0_/_0.8),_0_0_20px_rgb(0_0_0_/_0.5)]">
+        <p className="flex items-center justify-center gap-3 text-xs font-heading font-semibold uppercase tracking-[0.5em] text-white [text-shadow:_0_2px_8px_rgb(0_0_0_/_0.8),_0_0_20px_rgb(0_0_0_/_0.5)]">
           <ShieldPlus className="h-5 w-5 text-[#B8860B] drop-shadow-lg" aria-hidden="true" />
           Preparedness · Protection · Performance
         </p>
-        <h1 className="text-4xl font-bold leading-tight text-white [text-shadow:_0_4px_12px_rgb(0_0_0_/_0.9),_0_2px_6px_rgb(0_0_0_/_0.7),_0_0_30px_rgb(0_0_0_/_0.6)] sm:text-5xl md:text-6xl">
+        <h1 className="text-4xl font-heading font-bold leading-tight text-white [text-shadow:_0_4px_12px_rgb(0_0_0_/_0.9),_0_2px_6px_rgb(0_0_0_/_0.7),_0_0_30px_rgb(0_0_0_/_0.6)] sm:text-5xl md:text-6xl">
           Empowering Asia&apos;s tactical professionals with elite training.
         </h1>
         <p className="max-w-3xl text-lg text-white/95 [text-shadow:_0_2px_8px_rgb(0_0_0_/_0.8),_0_0_20px_rgb(0_0_0_/_0.5)] sm:text-xl">

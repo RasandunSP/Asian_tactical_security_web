@@ -74,6 +74,7 @@ export function ServicesSection() {
 
   // Calculate card width and initialize scroll position
   useEffect(() => {
+    const servicesLength = services.length
     const updateCardWidth = () => {
       if (scrollContainerRef.current) {
         const firstCard = scrollContainerRef.current.querySelector("article")
@@ -82,7 +83,7 @@ export function ServicesSection() {
           // Initialize scroll to middle section
           if (scrollContainerRef.current.scrollLeft === 0) {
             scrollContainerRef.current.scrollTo({
-              left: services.length * cardWidthRef.current,
+              left: servicesLength * cardWidthRef.current,
               behavior: "auto",
             })
           }
@@ -98,12 +99,13 @@ export function ServicesSection() {
   useEffect(() => {
     if (!isAutoPlaying || isTransitioning) return
 
+    const servicesLength = services.length
     const interval = setInterval(() => {
       setCurrentIndex((prev) => {
         const next = prev + 1
         // If we're at the end of middle section, loop to start of middle section
-        if (next >= services.length * 2) {
-          return services.length
+        if (next >= servicesLength * 2) {
+          return servicesLength
         }
         return next
       })
@@ -115,13 +117,14 @@ export function ServicesSection() {
   // Handle scroll position
   useEffect(() => {
     if (scrollContainerRef.current && cardWidthRef.current > 0) {
+      const servicesLength = services.length
       const scrollPosition = currentIndex * cardWidthRef.current
       
       // Check if we need to jump (at boundaries for seamless loop)
-      if (currentIndex >= services.length * 2) {
+      if (currentIndex >= servicesLength * 2) {
         // Jump to middle section without animation
         setIsTransitioning(true)
-        const targetIndex = services.length + (currentIndex % services.length)
+        const targetIndex = servicesLength + (currentIndex % servicesLength)
         scrollContainerRef.current.scrollTo({
           left: targetIndex * cardWidthRef.current,
           behavior: "auto",
@@ -130,10 +133,10 @@ export function ServicesSection() {
           setCurrentIndex(targetIndex)
           setIsTransitioning(false)
         }, 50)
-      } else if (currentIndex < services.length) {
+      } else if (currentIndex < servicesLength) {
         // Jump to end of middle section without animation
         setIsTransitioning(true)
-        const targetIndex = services.length + currentIndex
+        const targetIndex = servicesLength + currentIndex
         scrollContainerRef.current.scrollTo({
           left: targetIndex * cardWidthRef.current,
           behavior: "auto",
@@ -154,11 +157,12 @@ export function ServicesSection() {
 
   const handlePrevious = () => {
     setIsAutoPlaying(false)
+    const servicesLength = services.length
     setCurrentIndex((prev) => {
       const next = prev - 1
       // If we're at the start of middle section, jump to end of middle section (seamless loop)
-      if (next < services.length) {
-        return services.length * 2 - 1
+      if (next < servicesLength) {
+        return servicesLength * 2 - 1
       }
       return next
     })
@@ -166,25 +170,26 @@ export function ServicesSection() {
 
   const handleNext = () => {
     setIsAutoPlaying(false)
+    const servicesLength = services.length
     setCurrentIndex((prev) => {
       const next = prev + 1
       // If we're at the end of middle section, jump to start of middle section (seamless loop)
-      if (next >= services.length * 2) {
-        return services.length
+      if (next >= servicesLength * 2) {
+        return servicesLength
       }
       return next
     })
   }
 
   return (
-    <section id="services" className="bg-white dark:bg-[#1a1a1a]">
+    <section id="services" className="bg-white dark:bg-[#1a1a1a] text-[#111827] dark:text-[#F1F5F9]">
       <div className="mx-auto max-w-7xl px-4 pt-16 pb-24">
         <div className="mb-12">
           <div className="text-left">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#B8860B]">Services</p>
-            <h2 className="mt-4 text-4xl font-bold text-[#1F2937] dark:text-[#F1F5F9]">Comprehensive Tactical Training Suite</h2>
-            <div className="mt-3 flex items-center justify-between gap-4">
-              <p className="max-w-2xl text-lg text-[#1F2937]/80 dark:text-[#F1F5F9]/80">
+            <p className="text-xs font-heading font-semibold uppercase tracking-[0.5em] text-[#B8860B]">Services</p>
+                <h2 className="mt-4 text-4xl font-heading font-bold text-[#111827] dark:text-[#F1F5F9]">Comprehensive Tactical Training Suite</h2>
+                <div className="mt-3 flex items-center justify-between gap-4">
+                  <p className="max-w-2xl text-lg text-[#111827]/90 dark:text-[#F1F5F9]/80">
                 Modular programs that scale from individual readiness to full organizational capability development.
               </p>
               <div className="flex gap-2">
@@ -218,7 +223,7 @@ export function ServicesSection() {
           {duplicatedServices.map(({ icon: Icon, image, ...service }, index) => (
             <article
               key={`${service.title}-${index}`}
-              className="group min-w-[380px] max-w-[380px] flex-shrink-0 overflow-hidden rounded-2xl border border-[#E5E7EB] dark:border-[#404040] bg-white dark:bg-[#2a2a2a] text-left shadow-sm transition hover:-translate-y-1 hover:border-[#B8860B]/40 hover:shadow-lg"
+              className="group min-w-[380px] max-w-[380px] flex-shrink-0 overflow-hidden rounded-2xl border border-[#E5E7EB] dark:border-[#404040] bg-[#F9FAFB] dark:bg-[#2a2a2a] text-left shadow-sm transition hover:-translate-y-1 hover:border-[#B8860B]/40 hover:shadow-lg"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <Image
@@ -229,13 +234,13 @@ export function ServicesSection() {
                   sizes="380px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                <div className="absolute bottom-4 left-4 inline-flex rounded-full bg-[#FFF7E6] dark:bg-[#2a2a2a] p-3 text-[#B8860B]">
+                <div className="absolute bottom-4 left-4 inline-flex rounded-full bg-white/95 dark:bg-[#2a2a2a] p-3 text-[#B8860B] shadow-md">
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#1F2937] dark:text-[#F1F5F9]">{service.title}</h3>
-                <p className="mt-3 text-[#1F2937]/75 dark:text-[#F1F5F9]/75">{service.description}</p>
+                <h3 className="text-xl font-heading font-semibold text-[#111827] dark:text-[#F1F5F9]">{service.title}</h3>
+                <p className="mt-3 text-[#111827]/85 dark:text-[#F1F5F9]/75">{service.description}</p>
               </div>
             </article>
           ))}

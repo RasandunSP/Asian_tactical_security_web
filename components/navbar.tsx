@@ -24,7 +24,7 @@ const links = [
 export function Navbar() {
   const [open, setOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const { theme } = useTheme()
+  const { theme, resolvedTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,14 +46,25 @@ export function Navbar() {
 
   // Determine logo based on scroll and theme
   const getLogo = () => {
-    if (isScrolled) {
-      return "/TST logo/TST white.png"
+    const currentTheme = resolvedTheme || theme || "light"
+    // In light theme: gold when not scrolled, black when scrolled
+    // In dark theme: white when scrolled (as before)
+    if (currentTheme === "dark") {
+      if (isScrolled) {
+        return "/TST logo/TST white.png"
+      }
+      return "/TST logo/TST GOLD.png"
+    } else {
+      // Light theme
+      if (isScrolled) {
+        return "/TST logo/TST BLACK.png"
+      }
+      return "/TST logo/TST GOLD.png"
     }
-    return "/TST logo/TST GOLD.png"
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#E5E7EB] dark:border-[#404040] bg-white/90 dark:bg-[#1a1a1a]/90 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-[#1a1a1a]/60">
+    <header className="sticky top-0 z-50 w-full border-b border-[#D1D5DB] dark:border-[#404040] bg-white dark:bg-[#1a1a1a]/90 backdrop-blur supports-[backdrop-filter]:bg-white dark:supports-[backdrop-filter]:bg-[#1a1a1a]/60 shadow-sm">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link
           href="#home"
@@ -68,11 +79,11 @@ export function Navbar() {
             className="h-10 w-10 object-contain transition-opacity duration-300"
             unoptimized
           />
-          <span className="text-sm font-semibold uppercase tracking-[0.1em] text-[#1F2937] dark:text-[#F1F5F9]">
+          <span className="text-sm font-heading font-bold uppercase tracking-[0.15em] text-[#111827] dark:text-[#F1F5F9]">
             ASIAN TACTICAL SECURITY
           </span>
         </Link>
-        <nav className="hidden items-center gap-4 text-sm font-medium text-[#1F2937] dark:text-[#F1F5F9] md:flex">
+        <nav className="hidden items-center gap-4 text-sm font-medium text-[#111827] dark:text-[#F1F5F9] md:flex">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -95,7 +106,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setOpen((prev) => !prev)}
-            className="text-[#1F2937] dark:text-[#F1F5F9]"
+            className="text-[#111827] dark:text-[#F1F5F9]"
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -103,7 +114,7 @@ export function Navbar() {
       </div>
       <nav
         className={cn(
-          "grid gap-4 border-t border-[#E5E7EB] dark:border-[#404040] bg-white dark:bg-[#1a1a1a] px-4 py-6 text-sm font-medium text-[#1F2937] dark:text-[#F1F5F9] transition-[grid-template-rows,opacity] md:hidden",
+          "grid gap-4 border-t border-[#D1D5DB] dark:border-[#404040] bg-white dark:bg-[#1a1a1a] px-4 py-6 text-sm font-medium text-[#111827] dark:text-[#F1F5F9] transition-[grid-template-rows,opacity] md:hidden",
           open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
         )}
       >
