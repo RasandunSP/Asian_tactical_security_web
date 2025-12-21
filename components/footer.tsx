@@ -14,8 +14,8 @@ export function Footer() {
 
   return (
     <footer className="border-t border-[#D1D5DB] dark:border-[#404040] bg-white dark:bg-[#1a1a1a] text-[#111827] dark:text-[#F1F5F9]">
-      <div className="mx-auto max-w-6xl px-4 py-12">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:py-12">
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -27,7 +27,7 @@ export function Footer() {
                 className="h-10 w-10 object-contain dark:invert"
                 unoptimized
               />
-              <span className="text-sm font-heading font-bold uppercase tracking-[0.15em] text-[#111827] dark:text-[#F1F5F9]">
+              <span className="hidden sm:inline-block text-sm font-heading font-bold uppercase tracking-[0.15em] text-[#111827] dark:text-[#F1F5F9]">
                 ASIAN TACTICAL SECURITY
               </span>
             </div>

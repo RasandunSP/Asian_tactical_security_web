@@ -64,20 +64,20 @@ export function ContactSection() {
   }
   return (
     <section id="contact" className="bg-white dark:bg-[#2a2a2a] text-[#111827] dark:text-[#F1F5F9]">
-      <div className="mx-auto max-w-6xl px-4 pt-16 pb-24">
-        <div className="text-center mb-12">
+      <div className="mx-auto max-w-6xl px-4 pt-12 sm:pt-16 pb-16 sm:pb-24">
+        <div className="text-center mb-8 sm:mb-12">
           <p className="text-xs font-heading font-semibold uppercase tracking-[0.5em] text-[#B8860B]">Contact</p>
-              <h2 className="mt-3 text-3xl md:text-4xl font-heading font-bold text-[#111827] dark:text-[#F1F5F9]">
+              <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-[#111827] dark:text-[#F1F5F9]">
                 Get in Touch with Our Team
               </h2>
-              <p className="mt-3 text-base sm:text-lg text-[#111827]/90 dark:text-[#F1F5F9]/80">
+              <p className="mt-3 text-sm sm:text-base md:text-lg text-[#111827]/90 dark:text-[#F1F5F9]/80 px-2">
             We&apos;d love to hear from you. Please fill out this form or reach out to us directly.
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-10">
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-10">
           {/* Contact Methods Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:max-w-2xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full lg:max-w-2xl">
             <Card className="border border-[#E5E7EB] dark:border-[#404040] bg-[#F9FAFB] dark:bg-[#1a1a1a]">
               <CardContent className="p-6">
                 <div className="h-12 w-12 flex items-center justify-center bg-white dark:bg-[#2a2a2a] text-[#B8860B] border border-[#B8860B]/30 dark:border-[#B8860B]/20 rounded-xl shadow-sm">
@@ -149,10 +149,10 @@ export function ContactSection() {
           </div>
 
           {/* Contact Form */}
-          <Card className="border border-[#E5E7EB] dark:border-[#404040] bg-[#F9FAFB] dark:bg-[#1a1a1a] w-full max-w-lg lg:ms-auto">
+            <Card className="border border-[#E5E7EB] dark:border-[#404040] bg-[#F9FAFB] dark:bg-[#1a1a1a] w-full max-w-lg lg:ms-auto">
             <CardHeader>
-              <CardTitle className="text-2xl font-heading text-[#1F2937] dark:text-[#F1F5F9]">Send us a Message</CardTitle>
-              <CardDescription className="text-[#1F2937]/70 dark:text-[#F1F5F9]/70">
+              <CardTitle className="text-xl sm:text-2xl font-heading text-[#1F2937] dark:text-[#F1F5F9]">Send us a Message</CardTitle>
+              <CardDescription className="text-sm sm:text-base text-[#1F2937]/70 dark:text-[#F1F5F9]/70">
                 Share your mission requirements and we will craft a tactical training roadmap.
               </CardDescription>
             </CardHeader>

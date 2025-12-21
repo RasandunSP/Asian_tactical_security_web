@@ -188,11 +188,11 @@ export function ServicesSection() {
           <div className="text-left">
             <p className="text-xs font-heading font-semibold uppercase tracking-[0.5em] text-[#B8860B]">Services</p>
                 <h2 className="mt-4 text-4xl font-heading font-bold text-[#111827] dark:text-[#F1F5F9]">Comprehensive Tactical Training Suite</h2>
-                <div className="mt-3 flex items-center justify-between gap-4">
-                  <p className="max-w-2xl text-lg text-[#111827]/90 dark:text-[#F1F5F9]/80">
+                <div className="mt-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <p className="max-w-2xl text-base sm:text-lg text-[#111827]/90 dark:text-[#F1F5F9]/80">
                 Modular programs that scale from individual readiness to full organizational capability development.
               </p>
-              <div className="flex gap-2">
+              <div className="flex gap-2 self-start sm:self-auto">
                 <Button
                   variant="outline"
                   size="icon"
@@ -223,7 +223,7 @@ export function ServicesSection() {
           {duplicatedServices.map(({ icon: Icon, image, ...service }, index) => (
             <article
               key={`${service.title}-${index}`}
-              className="group min-w-[380px] max-w-[380px] flex-shrink-0 overflow-hidden rounded-2xl border border-[#E5E7EB] dark:border-[#404040] bg-[#F9FAFB] dark:bg-[#2a2a2a] text-left shadow-sm transition hover:-translate-y-1 hover:border-[#B8860B]/40 hover:shadow-lg"
+              className="group min-w-[calc(100vw-2rem)] sm:min-w-[320px] sm:max-w-[380px] flex-shrink-0 overflow-hidden rounded-2xl border border-[#E5E7EB] dark:border-[#404040] bg-[#F9FAFB] dark:bg-[#2a2a2a] text-left shadow-sm transition hover:-translate-y-1 hover:border-[#B8860B]/40 hover:shadow-lg"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <Image
@@ -238,9 +238,9 @@ export function ServicesSection() {
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-heading font-semibold text-[#111827] dark:text-[#F1F5F9]">{service.title}</h3>
-                <p className="mt-3 text-[#111827]/85 dark:text-[#F1F5F9]/75">{service.description}</p>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-heading font-semibold text-[#111827] dark:text-[#F1F5F9]">{service.title}</h3>
+                <p className="mt-2 sm:mt-3 text-sm sm:text-base text-[#111827]/85 dark:text-[#F1F5F9]/75">{service.description}</p>
               </div>
             </article>
           ))}

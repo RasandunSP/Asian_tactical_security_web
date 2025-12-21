@@ -65,7 +65,7 @@ export function Navbar() {
             className="h-10 w-10 object-contain transition-opacity duration-300"
             unoptimized
           />
-          <span className="text-sm font-heading font-bold uppercase tracking-[0.15em] text-[#F1F5F9]">
+          <span className="hidden text-sm font-heading font-bold uppercase tracking-[0.15em] text-[#F1F5F9] sm:inline-block">
             ASIAN TACTICAL SECURITY
           </span>
         </Link>
