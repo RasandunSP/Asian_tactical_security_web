@@ -5,10 +5,7 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Explicitly disable the Next.js plugin to avoid forms migration issues
-# The hidden static form file (public/hidden-form.html) allows Netlify
-# to detect form fields without requiring the plugin's form handling
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-  enabled = false
+# Note: The hidden static form file (public/hidden-form.html) allows Netlify
+# to detect form fields. If Netlify auto-installs @netlify/plugin-nextjs,
+# you'll need to remove it from Site settings → Plugins in the Netlify UI.
 
