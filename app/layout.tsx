@@ -32,17 +32,18 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="dark">
       <head>
         <ThemeScript />
       </head>
       <body className={`${stardosStencil.variable} ${inter.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={false}
           storageKey="tst-theme"
           disableTransitionOnChange={false}
+          forcedTheme="dark"
         >
           {children}
         </ThemeProvider>

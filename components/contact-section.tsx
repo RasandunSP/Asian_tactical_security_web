@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -12,10 +13,44 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { MailIcon, MapPinIcon, PhoneIcon, MessageCircle } from "lucide-react"
+import { MailIcon, MapPinIcon, PhoneIcon, MessageCircle, CheckCircle2, AlertCircle } from "lucide-react"
 import Link from "next/link"
 
 export function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [errorMessage, setErrorMessage] = useState("")
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+    setErrorMessage("")
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
+      })
+
+      if (response.ok) {
+        setSubmitStatus("success")
+        form.reset()
+      } else {
+        setSubmitStatus("error")
+        setErrorMessage("Something went wrong. Please try again later.")
+      }
+    } catch (error) {
+      setSubmitStatus("error")
+      setErrorMessage("Network error. Please check your connection and try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
   return (
     <section id="contact" className="bg-white dark:bg-[#2a2a2a] text-[#111827] dark:text-[#F1F5F9]">
       <div className="mx-auto max-w-6xl px-4 pt-16 pb-24">
@@ -111,7 +146,48 @@ export function ContactSection() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form>
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+              >
+                {/* Hidden field for Netlify form identification */}
+                <input type="hidden" name="form-name" value="contact" />
+                {/* Honeypot field for spam protection */}
+                <input type="hidden" name="bot-field" />
+
+                {/* Success Message */}
+                {submitStatus === "success" && (
+                  <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-sm font-medium text-green-800 dark:text-green-300">
+                        Thank you for your inquiry!
+                      </p>
+                      <p className="text-sm text-green-700 dark:text-green-400 mt-1">
+                        We&apos;ve received your message and will get back to you soon.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Error Message */}
+                {submitStatus === "error" && (
+                  <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg flex items-start gap-3">
+                    <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-sm font-medium text-red-800 dark:text-red-300">
+                        Submission failed
+                      </p>
+                      <p className="text-sm text-red-700 dark:text-red-400 mt-1">
+                        {errorMessage || "Please try again later or contact us directly."}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
                 <div className="grid md:grid-cols-2 gap-x-6 gap-y-6">
                   <div className="col-span-2 sm:col-span-1">
                         <Label htmlFor="firstName" className="text-[#111827] dark:text-[#F1F5F9]">First Name</Label>
@@ -121,6 +197,7 @@ export function ContactSection() {
                           name="firstName"
                           className="mt-2 bg-white dark:bg-[#2a2a2a] border-[#D1D5DB] dark:border-[#404040] focus:border-[#B8860B] focus:ring-[#B8860B]"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div className="col-span-2 sm:col-span-1">
@@ -131,6 +208,7 @@ export function ContactSection() {
                       name="lastName"
                           className="mt-2 bg-white dark:bg-[#2a2a2a] border-[#D1D5DB] dark:border-[#404040] focus:border-[#B8860B] focus:ring-[#B8860B]"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div className="col-span-2">
@@ -142,6 +220,7 @@ export function ContactSection() {
                       name="email"
                           className="mt-2 bg-white dark:bg-[#2a2a2a] border-[#D1D5DB] dark:border-[#404040] focus:border-[#B8860B] focus:ring-[#B8860B]"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div className="col-span-2">
@@ -151,6 +230,7 @@ export function ContactSection() {
                       id="organization"
                       name="organization"
                           className="mt-2 bg-white dark:bg-[#2a2a2a] border-[#D1D5DB] dark:border-[#404040] focus:border-[#B8860B] focus:ring-[#B8860B]"
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div className="col-span-2">
@@ -162,10 +242,11 @@ export function ContactSection() {
                           className="mt-2 bg-white dark:bg-[#2a2a2a] border-[#D1D5DB] dark:border-[#404040] focus:border-[#B8860B] focus:ring-[#B8860B]"
                       rows={6}
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div className="col-span-2 flex items-start gap-2">
-                    <Checkbox id="acceptTerms" className="mt-1 border-[#E5E7EB] dark:border-[#334155]" />
+                    <Checkbox id="acceptTerms" name="acceptTerms" className="mt-1 border-[#E5E7EB] dark:border-[#334155]" disabled={isSubmitting} />
                         <Label htmlFor="acceptTerms" className="text-sm text-[#111827]/80 dark:text-[#F1F5F9]/70 cursor-pointer">
                       You agree to our
                       <Link href="#" className="underline ml-1 text-[#B8860B] hover:text-[#9A7209]">
@@ -175,8 +256,13 @@ export function ContactSection() {
                     </Label>
                   </div>
                 </div>
-                <Button type="submit" className="mt-6 w-full bg-[#B8860B] hover:bg-[#9A7209]" size="lg">
-                  Submit Inquiry
+                <Button 
+                  type="submit" 
+                  className="mt-6 w-full bg-[#B8860B] hover:bg-[#9A7209] disabled:opacity-50 disabled:cursor-not-allowed" 
+                  size="lg"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Submitting..." : "Submit Inquiry"}
                 </Button>
               </form>
             </CardContent>
