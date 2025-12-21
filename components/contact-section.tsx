@@ -31,10 +31,21 @@ export function ContactSection() {
     const formData = new FormData(form)
 
     try {
+      // Convert FormData to URL-encoded string for Netlify Forms
+      const params = new URLSearchParams()
+      params.append("form-name", "contact")
+      
+      formData.forEach((value, key) => {
+        if (key !== "form-name" && key !== "bot-field") {
+          params.append(key, value.toString())
+        }
+      })
+
+      // Submit directly to Netlify Forms endpoint
       const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
+        body: params.toString(),
       })
 
       if (response.ok) {

@@ -19,13 +19,21 @@ This guide will help you configure Netlify Forms to send email notifications to 
      - **Publish directory:** `.next`
    - Click "Deploy site"
 
+**Important:** The `netlify.toml` file has been configured to work with Next.js. Netlify will automatically detect Next.js and use the appropriate adapter. The `@netlify/plugin-nextjs` plugin has been removed to avoid compatibility issues with Netlify Forms.
+
 ## Step 2: Verify Netlify Forms Detection
 
-After deployment, Netlify will automatically detect forms with the `data-netlify="true"` attribute. The form should appear in your Netlify dashboard.
+After deployment, Netlify will automatically detect forms with the `data-netlify="true"` attribute during the build process. The form should appear in your Netlify dashboard.
 
-1. Go to your site dashboard on Netlify
-2. Navigate to **Forms** in the left sidebar
-3. You should see a form named "contact" listed
+1. **Wait for the build to complete** (this is important - forms are detected during build)
+2. Go to your site dashboard on Netlify
+3. Navigate to **Forms** in the left sidebar
+4. You should see a form named "contact" listed
+
+**Note:** If the form doesn't appear immediately:
+- Wait a few minutes and refresh the Forms page
+- Check the build logs to ensure the build completed successfully
+- Verify that the form HTML includes `data-netlify="true"` and `name="contact"` attributes
 
 ## Step 3: Configure Email Notifications
 
@@ -173,6 +181,14 @@ If you need more control over email sending using Google SMTP, you'll need to cr
 
 ## Troubleshooting
 
+### Plugin "@netlify/plugin-nextjs" failed error
+
+If you encounter this error during build:
+- **Solution:** The `netlify.toml` has been updated to remove the explicit plugin reference
+- Netlify will automatically detect Next.js and use the appropriate adapter
+- The form will work with the auto-detected Next.js adapter
+- **No action needed** - this has been fixed in the codebase
+
 ### Form submissions not appearing in Netlify
 
 1. **Check form attributes:**
@@ -185,6 +201,7 @@ If you need more control over email sending using Google SMTP, you'll need to cr
 3. **Verify deployment:**
    - Make sure your latest code is deployed
    - Check the deployed site's HTML source to verify form attributes
+   - Ensure the build completed successfully
 
 ### Emails not being received
 
