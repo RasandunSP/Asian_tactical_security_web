@@ -19,7 +19,14 @@ This guide will help you configure Netlify Forms to send email notifications to 
      - **Publish directory:** `.next`
    - Click "Deploy site"
 
-**Important:** The `netlify.toml` file has been configured to work with Next.js. Netlify will automatically detect Next.js and use the appropriate adapter. The `@netlify/plugin-nextjs` plugin has been removed to avoid compatibility issues with Netlify Forms.
+3. **IMPORTANT - Remove the Next.js Plugin from Netlify UI:**
+   - After the initial deployment, go to **Site settings** → **Plugins**
+   - Look for `@netlify/plugin-nextjs` in the installed plugins list
+   - Click on it and select **Uninstall** or **Remove**
+   - This is necessary because the plugin v5 requires special migration steps for forms
+   - The hidden static form file (`public/hidden-form.html`) allows Netlify to detect forms without the plugin
+
+**Note:** A hidden static form file has been created at `public/hidden-form.html` which allows Netlify to detect your form fields during the build process. This is the recommended approach for Next.js sites with Netlify Forms.
 
 ## Step 2: Verify Netlify Forms Detection
 
@@ -184,10 +191,14 @@ If you need more control over email sending using Google SMTP, you'll need to cr
 ### Plugin "@netlify/plugin-nextjs" failed error
 
 If you encounter this error during build:
-- **Solution:** The `netlify.toml` has been updated to remove the explicit plugin reference
-- Netlify will automatically detect Next.js and use the appropriate adapter
-- The form will work with the auto-detected Next.js adapter
-- **No action needed** - this has been fixed in the codebase
+- **Root Cause:** Netlify automatically installs the `@netlify/plugin-nextjs` plugin through the UI, and version 5 requires special migration steps for forms
+- **Solution:** 
+  1. Go to your Netlify dashboard → **Site settings** → **Plugins**
+  2. Find `@netlify/plugin-nextjs` in the list
+  3. Click on it and select **Uninstall** or **Remove**
+  4. Redeploy your site
+- **Why this works:** The hidden static form file (`public/hidden-form.html`) allows Netlify to detect and process forms without requiring the Next.js runtime plugin
+- **Alternative:** If you need the Next.js runtime plugin, you'll need to follow the migration guide at https://ntl.fyi/next-runtime-forms-migration (the hidden form file is already in place)
 
 ### Form submissions not appearing in Netlify
 
