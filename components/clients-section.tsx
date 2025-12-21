@@ -49,7 +49,7 @@ export function ClientsSection() {
                   <div className="relative h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 flex-shrink-0 overflow-hidden">
                     <Image
                       src={client.logo}
-                      alt={client.name}
+                      alt={`${client.name} - Trusted client of Asian Tactical Security Training`}
                       width={64}
                       height={64}
                       className="h-full w-full object-contain"

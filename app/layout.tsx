@@ -17,13 +17,80 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "ASIAN TACTICAL SECURITY",
-  description: "Preparedness, protection, and performance through elite tactical training.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://tst-training.com"),
+  title: {
+    default: "Asian Tactical Security Training | Elite Tactical Training in Sri Lanka",
+    template: "%s | Asian Tactical Security Training",
+  },
+  description: "Asian Tactical Security Training (TST) provides elite tactical training, Krav Maga, law enforcement training, and close protection services across Sri Lanka and Asia. Expert-led programs for military, police, and security professionals.",
+  keywords: [
+    "tactical training",
+    "Krav Maga",
+    "law enforcement training",
+    "close protection",
+    "security training",
+    "tactical defense",
+    "Sri Lanka security training",
+    "military training",
+    "police training",
+    "self defense",
+    "threat analysis",
+    "risk assessment",
+    "tactical workshops",
+    "Asian Tactical Security",
+    "TST training",
+  ],
+  authors: [{ name: "Asian Tactical Security Training Pvt Ltd" }],
+  creator: "Asian Tactical Security Training Pvt Ltd",
+  publisher: "Asian Tactical Security Training Pvt Ltd",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "Asian Tactical Security Training",
+    title: "Asian Tactical Security Training | Elite Tactical Training in Sri Lanka",
+    description: "Elite tactical training, Krav Maga, law enforcement training, and close protection services. Expert-led programs for military, police, and security professionals across Asia.",
+    images: [
+      {
+        url: "/TST logo/TST GOLD.png",
+        width: 1200,
+        height: 630,
+        alt: "Asian Tactical Security Training Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Asian Tactical Security Training | Elite Tactical Training",
+    description: "Elite tactical training, Krav Maga, law enforcement training, and close protection services in Sri Lanka.",
+    images: ["/TST logo/TST GOLD.png"],
+    creator: "@tsttraining",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: "/TST logo/TST white.png",
     shortcut: "/TST logo/TST white.png",
     apple: "/TST logo/TST white.png",
   },
+  alternates: {
+    canonical: "/",
+  },
+  category: "Security Training",
 }
 
 export default function RootLayout({

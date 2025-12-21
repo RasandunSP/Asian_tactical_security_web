@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# prompts
+prompt.md
+NETLIFY_SETUP_INSTRUCTIONS.md
+SEO_OPTIMIZATION.md

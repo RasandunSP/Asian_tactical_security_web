@@ -46,7 +46,7 @@ export function WhyUsSection() {
               <div className="relative h-24 w-24 sm:h-32 sm:w-32 flex-shrink-0 overflow-hidden rounded-lg mx-auto sm:mx-0">
                 <Image
                   src={image}
-                  alt={highlight.title}
+                  alt={`${highlight.title} - Asian Tactical Security Training core value`}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                   sizes="(max-width: 640px) 96px, 128px"

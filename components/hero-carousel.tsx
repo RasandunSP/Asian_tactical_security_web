@@ -36,7 +36,7 @@ export function HeroCarousel() {
         >
           <Image
             src={src}
-            alt={`TST Training ${index + 1}`}
+            alt={`Asian Tactical Security Training - Elite tactical training session ${index + 1}`}
             fill
             className="object-cover"
             priority={index === 0}

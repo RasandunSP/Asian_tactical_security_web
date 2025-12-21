@@ -228,10 +228,10 @@ export function ServicesSection() {
               <div className="relative h-48 w-full overflow-hidden">
                 <Image
                   src={image}
-                  alt={service.title}
+                  alt={`${service.title} - Asian Tactical Security Training service`}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
-                  sizes="380px"
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 320px, 380px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute bottom-4 left-4 inline-flex rounded-full bg-white/95 dark:bg-[#2a2a2a] p-3 text-[#B8860B] shadow-md">
