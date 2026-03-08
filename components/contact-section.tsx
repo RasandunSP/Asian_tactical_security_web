@@ -89,9 +89,9 @@ export function ContactSection() {
                 </p>
                 <Link
                   className="font-medium text-[#B8860B] hover:text-[#9A7209] transition-colors"
-                  href="mailto:info@tst-training.com"
+                  href="mailto:atdtpvt2025@gmail.com"
                 >
-                  info@tst-training.com
+                  atdtpvt2025@gmail.com
                 </Link>
               </CardContent>
             </Card>
@@ -107,9 +107,9 @@ export function ContactSection() {
                 </p>
                 <Link
                   className="font-medium text-[#B8860B] hover:text-[#9A7209] transition-colors"
-                  href="tel:+94701234567"
+                  href="tel:+94773910907"
                 >
-                  +94 70 123 4567
+                  +9477 391 0907 
                 </Link>
               </CardContent>
             </Card>

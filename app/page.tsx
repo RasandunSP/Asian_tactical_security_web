@@ -26,7 +26,7 @@ export default function Home() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+94-70-123-4567",
+      telephone: "+9477 391 0907 ",
       contactType: "Customer Service",
       email: "info@tst-training.com",
       areaServed: ["LK", "Asia"],

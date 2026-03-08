@@ -18,10 +18,11 @@ export function AboutSection() {
           <h3 className="text-xl sm:text-2xl font-heading font-semibold text-[#B8860B]">Core Expertise</h3>
           <ul className="mt-4 sm:mt-6 space-y-2 sm:space-y-3 text-sm sm:text-base text-[#111827] dark:text-[#F1F5F9]">
             {[
-              "Krav Maga and civilian self-defence programs",
-              "Arrest & control tactics for law enforcement",
-              "Threat, risk, and vulnerability analysis",
-              "Mission-ready curriculum design",
+              "Training for the Private Security Sector",
+              "Civilian self-defense",
+              "Risk assessment and Threat analysis",
+              "Commercial security training",
+              "Consulting Programs development",
             ].map((item) => (
               <li key={item} className="flex items-start gap-2 sm:gap-3">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0 text-[#B8860B]" aria-hidden="true" />
