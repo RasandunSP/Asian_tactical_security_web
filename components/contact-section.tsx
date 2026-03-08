@@ -31,18 +31,16 @@ export function ContactSection() {
     const formData = new FormData(form)
 
     try {
-      // Convert FormData to URL-encoded string for Netlify Forms
+      // Build URL-encoded body for Netlify Forms (must include form-name; Netlify accepts POST to any path)
       const params = new URLSearchParams()
       params.append("form-name", "contact")
-      
+      params.append("bot-field", (formData.get("bot-field") as string) ?? "")
+
       formData.forEach((value, key) => {
-        if (key !== "form-name" && key !== "bot-field") {
-          params.append(key, value.toString())
-        }
+        if (key !== "form-name" && key !== "bot-field") params.append(key, value.toString())
       })
 
-      // Submit to the static HTML file so Netlify accepts the form (required for Next.js)
-      const response = await fetch("/hidden-form.html", {
+      const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: params.toString(),
@@ -160,6 +158,7 @@ export function ContactSection() {
               <form
                 name="contact"
                 method="POST"
+                action="/"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
