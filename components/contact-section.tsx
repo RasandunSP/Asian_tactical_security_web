@@ -41,8 +41,8 @@ export function ContactSection() {
         }
       })
 
-      // Submit directly to Netlify Forms endpoint
-      const response = await fetch("/", {
+      // Submit to the static HTML file so Netlify accepts the form (required for Next.js)
+      const response = await fetch("/hidden-form.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: params.toString(),
