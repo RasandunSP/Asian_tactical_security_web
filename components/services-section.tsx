@@ -39,7 +39,7 @@ const services = [
     title: "Civilian Self-Defence (Krav Maga)",
     description: "Scenario-based Krav Maga, arrest & control, and threat analysis for everyday protection.",
     icon: Users2,
-    image: "/Hero_caro/images (1).jpeg",
+    image: "/Hero_caro/WhatsApp Image 2026-03-08 at 16.10.37.jpeg",
   },
   {
     title: "Risk Assessment & Threat Analysis",

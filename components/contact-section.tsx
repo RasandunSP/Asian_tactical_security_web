@@ -163,7 +163,7 @@ export function ContactSection() {
                 data-netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
               >
-                {/* Hidden field for Netlify form identification */}
+                {/* Netlify: form-name required for detection; field order sets submission summary (title=first text input, body=first textarea) */}
                 <input type="hidden" name="form-name" value="contact" />
                 {/* Honeypot field for spam protection */}
                 <input type="hidden" name="bot-field" />

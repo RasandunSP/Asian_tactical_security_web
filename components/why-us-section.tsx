@@ -24,7 +24,7 @@ const highlights = [
     title: "Commercial security training",
     description:
       "Specialized training for high-value assets and business premises, including Cash-in-Transit (CIT) operations, armored vehicle protocols, and emergency response during transit.",
-    image: "/Hero_caro/images.jpeg",
+    image: "/Hero_caro/WhatsApp Image 2026-03-08 at 16.10.37 (1).jpeg",
   },
   {
     title: "Consulting Programs development",
