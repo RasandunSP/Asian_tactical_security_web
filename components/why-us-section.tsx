@@ -6,31 +6,31 @@ const highlights = [
     title: "Training for the Private Security Sector",
     description:
       "A premier training academy professionalizing the private security workforce with comprehensive modules: physical fitness, discipline, ethical conduct, legal frameworks, and modern security equipment to meet international standards.",
-    image: "/Hero_caro/20231209_BLP508.jpg",
+    image: "/Hero_caro/WhatsApp Image 2026-04-11 at 18.07.36.jpeg",
   },
   {
     title: "Civilian self-defense",
     description:
       "Specialized workshops and training courses that empower the public with personal safety, situational awareness, and practical defence techniques through non-lethal and tactical methods.",
-    image: "/Hero_caro/6f8066266e5cd7e79134b0347368ea550d252540.jpg",
+    image: "/Hero_caro/WhatsApp Image 2026-03-08 at 16.10.37 (1).jpeg",
   },
   {
     title: "Risk assessment and Threat analysis",
     description:
       "Expert security audits, protocol evaluation, and data-driven strategies to identify vulnerabilities and mitigate risks for corporate, industrial, and individual clients.",
-    image: "/Hero_caro/800x450.jpg",
+    image: "/Hero_caro/WhatsApp Image 2026-04-11 at 18.05.22.jpeg",
   },
   {
     title: "Commercial security training",
     description:
       "Specialized training for high-value assets and business premises, including Cash-in-Transit (CIT) operations, armored vehicle protocols, and emergency response during transit.",
-    image: "/Hero_caro/WhatsApp Image 2026-03-08 at 16.10.37 (1).jpeg",
+    image: "/Hero_caro/WhatsApp Image 2026-04-11 at 18.04.48.jpeg",
   },
   {
     title: "Consulting Programs development",
     description:
       "Strategic partnership in developing customized security programs, SOPs, and emergency response plans—holistic blueprints integrating technology, manpower, and management for sustainable security solutions.",
-    image: "/Hero_caro/20231209_BLP508.jpg",
+    image: "/Hero_caro/WhatsApp Image 2026-04-11 at 18.08.06.jpeg",
   },
 ]
 

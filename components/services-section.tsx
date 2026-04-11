@@ -21,19 +21,19 @@ const services = [
     title: "Law Enforcement Tactical Training",
     description: "Enhance the effectiveness, safety, and professionalism of police and security forces.",
     icon: ShieldCheck,
-    image: "/Hero_caro/20231209_BLP508.jpg",
+    image: "/Hero_caro/WhatsApp Image 2026-04-11 at 18.07.36.jpeg",
   },
   {
     title: "Close Protection Training",
     description: "Elite-level instruction for high-stakes environments where personal security is paramount.",
     icon: Shield,
-    image: "/Hero_caro/6f8066266e5cd7e79134b0347368ea550d252540.jpg",
+    image: "/Hero_caro/WhatsApp Image 2026-03-08 at 16.10.37 (1).jpeg",
   },
   {
     title: "Commercial Security Services",
     description: "Raise the standards of private security personnel serving commercial and corporate facilities.",
     icon: LayoutDashboard,
-    image: "/Hero_caro/800x450.jpg",
+    image: "/Hero_caro/WhatsApp Image 2026-04-11 at 18.04.48.jpeg",
   },
   {
     title: "Civilian Self-Defence (Krav Maga)",
@@ -45,19 +45,19 @@ const services = [
     title: "Risk Assessment & Threat Analysis",
     description: "Comprehensive reviews identifying vulnerabilities and mitigation strategies.",
     icon: Target,
-    image: "/Hero_caro/images (2).jpeg",
+    image: "/Hero_caro/20231209_BLP508.jpg",
   },
   {
     title: "Tactical Workshops & Seminars",
     description: "Specialized sessions that keep teams sharp on emerging tactics and doctrines.",
     icon: GraduationCap,
-    image: "/Hero_caro/images (3).jpeg",
+    image: "/Hero_caro/WhatsApp Image 2026-04-11 at 18.08.06.jpeg",
   },
   {
     title: "Consulting & Program Development",
     description: "Tailored curriculum and program design aligned to each organization's mission.",
     icon: ClipboardCheck,
-    image: "/Hero_caro/466514810_18205018228293289_3041223144192363336_n.jpg",
+    image: "/Hero_caro/20231209_BLP508.jpg",
   },
 ]
 

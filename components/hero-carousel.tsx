@@ -4,14 +4,10 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 
 const heroImages = [
-  "/Hero_caro/20231209_BLP508.jpg",
-  "/Hero_caro/466514810_18205018228293289_3041223144192363336_n.jpg",
-  "/Hero_caro/6f8066266e5cd7e79134b0347368ea550d252540.jpg",
-  "/Hero_caro/800x450.jpg",
-  "/Hero_caro/images (1).jpeg",
-  "/Hero_caro/images (2).jpeg",
-  "/Hero_caro/images (3).jpeg",
-  "/Hero_caro/images.jpeg",
+  "/Hero_caro/WhatsApp Image 2026-04-11 at 18.05.22.jpeg",
+  "/Hero_caro/WhatsApp Image 2026-04-11 at 18.05.40.jpeg",
+  "/Hero_caro/WhatsApp Image 2026-04-11 at 18.07.36.jpeg",
+  "/Hero_caro/WhatsApp Image 2026-04-11 at 18.08.06.jpeg",
 ]
 
 export function HeroCarousel() {
