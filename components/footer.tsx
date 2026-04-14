@@ -163,8 +163,8 @@ export function Footer() {
                   Get in Touch
                 </Link>
               </li>
-              <li>Email: info@tst-training.com</li>
-              <li>Phone: +94 70 123 4567</li>
+              <li>Email: atdtpvt2025@gmail.com</li>
+              <li>Phone: +9477 391 0907</li>
               <li>Location: Colombo, Sri Lanka</li>
             </ul>
           </div>
