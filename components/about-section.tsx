@@ -9,20 +9,24 @@ export function AboutSection() {
           <p className="text-xs font-heading font-semibold uppercase tracking-[0.5em] text-[#B8860B]">About Us</p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-[#111827] dark:text-[#F1F5F9]">Asian Tactical Security Training Pvt Ltd</h2>
           <p className="text-base sm:text-lg leading-relaxed text-[#111827]/90 dark:text-[#F1F5F9]/80">
-            A specialized tactical training company founded by seasoned military and law enforcement professionals. We deliver
-            realistic, legally compliant, and effective defence training to police units, private security teams, corporations, and
-            civilians who demand the highest standards.
+            Asian Tactical Security Training (TST) Pvt Ltd is a premier, specialized tactical training organization based in Sri Lanka.
+            Pioneering the industry as the first specialized tactical training company in Sri Lanka, TST was founded by elite
+            professionals with extensive backgrounds in military and law enforcement. We provide realistic, legally compliant, and
+            highly effective defence training solutions for law enforcement, private security firms, corporate organizations, and
+            civilians.
           </p>
         </div>
         <div className="rounded-2xl border border-[#E5E7EB] dark:border-[#404040] bg-[#F9FAFB] dark:bg-[#2a2a2a] p-6 sm:p-8 shadow-sm">
           <h3 className="text-xl sm:text-2xl font-heading font-semibold text-[#B8860B]">Core Expertise</h3>
           <ul className="mt-4 sm:mt-6 space-y-2 sm:space-y-3 text-sm sm:text-base text-[#111827] dark:text-[#F1F5F9]">
             {[
-              "Training for the Private Security Sector",
-              "Civilian self-defense",
-              "Risk assessment and Threat analysis",
-              "Commercial security training",
-              "Consulting Programs development",
+              "Law Enforcement Tactical Training",
+              "Close Protection & Executive Security",
+              "Civilian Self-Defence (Krav Maga)",
+              "Commercial Security Training",
+              "Risk Assessment & Threat Analysis",
+              "Tactical Workshops & Seminars",
+              "Consulting & Program Development",
             ].map((item) => (
               <li key={item} className="flex items-start gap-2 sm:gap-3">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0 text-[#B8860B]" aria-hidden="true" />

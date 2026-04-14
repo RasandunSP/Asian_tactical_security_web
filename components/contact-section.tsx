@@ -30,6 +30,33 @@ export function ContactSection() {
     const form = e.currentTarget
     const formData = new FormData(form)
 
+    // Open user's email client with a pre-filled draft (in addition to Netlify form submission)
+    try {
+      const firstName = ((formData.get("firstName") as string) ?? "").trim()
+      const lastName = ((formData.get("lastName") as string) ?? "").trim()
+      const organization = ((formData.get("organization") as string) ?? "").trim()
+      const subject = ((formData.get("subject") as string) ?? "").trim()
+      const message = ((formData.get("message") as string) ?? "").trim()
+
+      const fromLine = organization ? `I'm ${firstName} ${lastName} from ${organization} writing to you about` : `I'm ${firstName} ${lastName} writing to you about`
+      const body = [
+        "Dear TST Team,",
+        "",
+        `${fromLine}`,
+        message ? `\n${message}` : "",
+        "",
+        "Thank You,",
+        `${firstName}.`,
+      ]
+        .filter(Boolean)
+        .join("\n")
+
+      const mailto = `mailto:atdtpvt2025@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+      window.open(mailto, "_blank")
+    } catch {
+      // No-op: Netlify form submission still proceeds.
+    }
+
     try {
       // Build URL-encoded body for Netlify Forms (must include form-name; Netlify accepts POST to any path)
       const params = new URLSearchParams()
@@ -229,6 +256,17 @@ export function ContactSection() {
                       id="email"
                       name="email"
                           className="mt-2 bg-white dark:bg-[#2a2a2a] border-[#D1D5DB] dark:border-[#404040] focus:border-[#B8860B] focus:ring-[#B8860B]"
+                      required
+                      disabled={isSubmitting}
+                    />
+                  </div>
+                  <div className="col-span-2">
+                    <Label htmlFor="subject" className="text-[#111827] dark:text-[#F1F5F9]">Subject</Label>
+                    <Input
+                      placeholder="Subject"
+                      id="subject"
+                      name="subject"
+                      className="mt-2 bg-white dark:bg-[#2a2a2a] border-[#D1D5DB] dark:border-[#404040] focus:border-[#B8860B] focus:ring-[#B8860B]"
                       required
                       disabled={isSubmitting}
                     />
