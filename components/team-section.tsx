@@ -32,12 +32,14 @@ const team = [
     bio: "Retired Chief Inspector, Special Task Force Sri Lanka (2005–2026) and a certified UN instructor.",
     image: "/Hero_caro/Team/director training.png",
   },
+  /*
   {
     name: "Mr Mahendra Madusanka",
     role: "Chief Instructor",
     bio: "Taekwon Do (2nd Dan) and Krav Maga & Kapap practitioner delivering practical, scenario-based instruction.",
     image: "/Hero_caro/Team/chief instructor .png",
   },
+  */
   {
     name: "Mr Stefano Maiocchi",
     role: "Instructor",
