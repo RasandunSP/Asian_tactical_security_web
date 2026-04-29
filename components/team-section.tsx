@@ -14,11 +14,17 @@ const team = [
     bio: "Karate (5th Dan), Krav Maga & Kapap (5th Dan), Kyusho pressure-point specialist, and Kapap Israel Master with multiple international instructor certifications.",
     image: "/Hero_caro/Team/CEO.png",
   },
+  // {
+  //   name: "Mr Indika Salgado",
+  //   role: "Consultant & Advisor",
+  //   bio: "President (Sri Lanka–China Business Co-operation Council) and Director at Dart Global Logistics and Logicentrix (Pvt) Ltd.",
+  //   image: "/Hero_caro/Team/Consultant.png",
+  // },
   {
-    name: "Mr Indika Salgado",
-    role: "Consultant & Advisor",
-    bio: "President (Sri Lanka–China Business Co-operation Council) and Director at Dart Global Logistics and Logicentrix (Pvt) Ltd.",
-    image: "/Hero_caro/Team/Consultant.png",
+    name: "Miss K L Vijini Hansini",
+    role: "Secretary",
+    bio: "ACMA (UK), CGMA. BSc. Accounting (Special) – University of Sri Jayewardenepura.",
+    image: "/Hero_caro/Team/Vijini%20-%20Sec.jpeg",
   },
   {
     name: "Mrs Shamali",

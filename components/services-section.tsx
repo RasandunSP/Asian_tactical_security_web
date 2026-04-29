@@ -51,13 +51,13 @@ const services = [
     title: "Tactical Workshops & Seminars",
     description: "Specialized sessions that keep teams sharp on emerging tactics and doctrines.",
     icon: GraduationCap,
-    image: "/Hero_caro/WhatsApp Image 2026-04-11 at 18.08.06.jpeg",
+    image: "/Hero_caro/WhatsApp Image 2026-04-29 at 05.52.33.jpeg",
   },
   {
     title: "Consulting & Program Development",
     description: "Tailored curriculum and program design aligned to each organization's mission.",
     icon: ClipboardCheck,
-    image: "/Hero_caro/20231209_BLP508.jpg",
+    image: "/Hero_caro/WhatsApp Image 2026-04-11 at 18.08.06.jpeg",
   },
 ]
 

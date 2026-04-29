@@ -38,9 +38,9 @@ const Contact = () => (
             </p>
             <Link
               className="font-medium text-primary"
-              href="mailto:akashmoradiya3444@gmail.com"
+              href="mailto:tstteamsl@gmail.com"
             >
-              akashmoradiya3444@gmail.com
+              tstteamsl@gmail.com
             </Link>
           </div>
           <div>
@@ -81,9 +81,9 @@ const Contact = () => (
             </p>
             <Link
               className="font-medium text-primary"
-              href="tel:akashmoradiya3444@gmail.com"
+              href="tel:+94773910907"
             >
-              +1 (555) 000-0000
+              +9477 391 0907
             </Link>
           </div>
         </div>

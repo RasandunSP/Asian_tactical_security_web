@@ -51,7 +51,7 @@ export function ContactSection() {
         .filter(Boolean)
         .join("\n")
 
-      const mailto = `mailto:atdtpvt2025@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+      const mailto = `mailto:tstteamsl@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
       window.open(mailto, "_blank")
     } catch {
       // No-op: Netlify form submission still proceeds.
@@ -114,9 +114,9 @@ export function ContactSection() {
                 </p>
                 <Link
                   className="font-medium text-[#B8860B] hover:text-[#9A7209] transition-colors"
-                  href="mailto:atdtpvt2025@gmail.com"
+                  href="mailto:tstteamsl@gmail.com"
                 >
-                  atdtpvt2025@gmail.com
+                  tstteamsl@gmail.com
                 </Link>
               </CardContent>
             </Card>
