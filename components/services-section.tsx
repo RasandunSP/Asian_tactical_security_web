@@ -445,9 +445,9 @@ export function ServicesSection() {
             if (e.target === e.currentTarget) setIsModalOpen(false)
           }}
         >
-          <div className="flex h-full w-full items-center justify-center p-3 sm:p-6">
-            <div className="flex w-full max-w-6xl max-h-[92vh] flex-col overflow-hidden rounded-3xl bg-white dark:bg-[#111111] shadow-2xl ring-1 ring-black/10 dark:ring-white/10">
-              <div className="flex items-center justify-between gap-4 border-b border-[#E5E7EB] dark:border-[#2a2a2a] px-4 sm:px-8 py-4">
+          <div className="flex h-full w-full items-center justify-center p-2 sm:p-6">
+            <div className="flex w-full max-w-6xl max-h-[94vh] sm:max-h-[92vh] flex-col overflow-hidden rounded-2xl sm:rounded-3xl bg-white dark:bg-[#111111] shadow-2xl ring-1 ring-black/10 dark:ring-white/10">
+              <div className="flex items-center justify-between gap-3 sm:gap-4 border-b border-[#E5E7EB] dark:border-[#2a2a2a] px-4 sm:px-8 py-3 sm:py-4">
                 <div className="min-w-0">
                   <p className="text-xs font-heading font-semibold uppercase tracking-[0.5em] text-[#B8860B]">Services</p>
                   <h3 className="mt-2 text-xl sm:text-2xl font-heading font-bold text-[#111827] dark:text-[#F1F5F9]">
@@ -471,8 +471,8 @@ export function ServicesSection() {
               </div>
 
               <div className="flex flex-1 flex-col lg:flex-row overflow-hidden">
-                <div className="w-full lg:w-[420px] border-b lg:border-b-0 lg:border-r border-[#E5E7EB] dark:border-[#2a2a2a] p-4 sm:p-6 overflow-auto">
-                  <div className="sticky top-0 z-10 bg-white/90 dark:bg-[#111111]/90 backdrop-blur pb-4">
+                <div className="hidden lg:block w-full lg:w-[420px] max-h-[40vh] lg:max-h-none shrink-0 border-b lg:border-b-0 lg:border-r border-[#E5E7EB] dark:border-[#2a2a2a] p-3 sm:p-6 overflow-auto">
+                  <div className="sticky top-0 z-10 bg-white/90 dark:bg-[#111111]/90 backdrop-blur pb-3 sm:pb-4">
                     <label className="block text-xs font-heading font-semibold uppercase tracking-[0.3em] text-[#111827]/70 dark:text-[#F1F5F9]/70">
                       Search
                     </label>
@@ -524,10 +524,66 @@ export function ServicesSection() {
                 </div>
 
                 <div className="flex-1 overflow-auto">
-                  <div className="mx-auto max-w-3xl px-4 sm:px-8 py-6 sm:py-10">
+                  <div className="mx-auto max-w-3xl px-4 sm:px-8 py-5 sm:py-10">
+                    <div className="lg:hidden mb-4">
+                      <label className="block text-xs font-heading font-semibold uppercase tracking-[0.3em] text-[#111827]/70 dark:text-[#F1F5F9]/70">
+                        Search
+                      </label>
+                      <input
+                        value={detailSearch}
+                        onChange={(e) => setDetailSearch(e.target.value)}
+                        placeholder="Search the detailed services…"
+                        className="mt-2 w-full rounded-2xl border border-[#E5E7EB] dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] px-4 py-3 text-sm text-[#111827] dark:text-[#F1F5F9] placeholder:text-[#111827]/50 dark:placeholder:text-[#F1F5F9]/40 focus:outline-none focus:ring-2 focus:ring-[#B8860B] focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#111111]"
+                      />
+
+                      {detailSearch.trim().length > 0 && (
+                        <div className="mt-3 overflow-hidden rounded-2xl border border-[#E5E7EB] dark:border-[#2a2a2a] bg-white dark:bg-[#111111] shadow-lg">
+                          {filteredDetailCards.length > 0 ? (
+                            <div className="max-h-56 overflow-auto">
+                              {filteredDetailCards.map((card) => {
+                                const Icon = card.icon
+                                const isActive = activeDetailId === card.id
+                                return (
+                                  <button
+                                    key={card.id}
+                                    type="button"
+                                    onClick={() => {
+                                      setActiveDetailId(card.id)
+                                      setDetailSearch("")
+                                    }}
+                                    className={[
+                                      "w-full px-4 py-3 text-left transition",
+                                      "border-b border-[#E5E7EB] dark:border-[#2a2a2a] last:border-b-0",
+                                      isActive ? "bg-[#B8860B]/10" : "hover:bg-[#F9FAFB] dark:hover:bg-[#1a1a1a]",
+                                    ].join(" ")}
+                                  >
+                                    <div className="flex items-start gap-3">
+                                      <div className="mt-0.5 inline-flex rounded-xl bg-[#B8860B]/10 p-2 text-[#B8860B] border border-[#B8860B]/20">
+                                        <Icon className="h-4 w-4" aria-hidden={true} />
+                                      </div>
+                                      <div className="min-w-0">
+                                        <div className="text-sm font-heading font-semibold text-[#111827] dark:text-[#F1F5F9] line-clamp-2">
+                                          {card.title}
+                                        </div>
+                                        <div className="mt-1 text-xs text-[#111827]/70 dark:text-[#F1F5F9]/70">Tap to open</div>
+                                      </div>
+                                    </div>
+                                  </button>
+                                )
+                              })}
+                            </div>
+                          ) : (
+                            <div className="px-4 py-3 text-sm text-[#111827]/80 dark:text-[#F1F5F9]/75">
+                              No matches. Try a different search.
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+
                     {(activeDetailImage || activeServiceImage) && (
                       <div className="mb-6 overflow-hidden rounded-2xl border border-[#E5E7EB] dark:border-[#2a2a2a] bg-[#F9FAFB] dark:bg-[#1a1a1a]">
-                        <div className="relative h-44 sm:h-56 w-full">
+                        <div className="relative h-36 sm:h-56 w-full">
                           <Image
                             src={activeDetailImage || activeServiceImage || ""}
                             alt={
@@ -544,8 +600,8 @@ export function ServicesSection() {
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
                           {(activeDetail?.title || activeServiceTitle) && (
-                            <div className="absolute bottom-4 left-4">
-                              <div className="inline-flex rounded-2xl bg-white/95 dark:bg-[#111111]/90 px-4 py-2 text-sm font-heading font-semibold text-[#111827] dark:text-[#F1F5F9] shadow-md">
+                            <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4">
+                              <div className="inline-flex rounded-2xl bg-white/95 dark:bg-[#111111]/90 px-3 sm:px-4 py-2 text-xs sm:text-sm font-heading font-semibold text-[#111827] dark:text-[#F1F5F9] shadow-md">
                                 {activeDetail?.title || activeServiceTitle}
                               </div>
                             </div>
@@ -556,15 +612,15 @@ export function ServicesSection() {
 
                     {activeDetail ? (
                       <>
-                        <div className="flex items-start gap-4">
-                          <div className="inline-flex rounded-2xl bg-[#B8860B]/10 p-3 text-[#B8860B] border border-[#B8860B]/20">
+                        <div className="flex items-start gap-3 sm:gap-4">
+                          <div className="inline-flex rounded-2xl bg-[#B8860B]/10 p-2.5 sm:p-3 text-[#B8860B] border border-[#B8860B]/20">
                             <activeDetail.icon className="h-7 w-7" aria-hidden={true} />
                           </div>
                           <div className="min-w-0">
                             <h4 className="text-2xl sm:text-3xl font-heading font-bold text-[#111827] dark:text-[#F1F5F9]">
                               {activeDetail.title}
                             </h4>
-                            <p className="mt-3 whitespace-pre-line text-base sm:text-lg text-[#111827]/85 dark:text-[#F1F5F9]/80">
+                            <p className="mt-3 whitespace-pre-line text-sm sm:text-lg text-[#111827]/85 dark:text-[#F1F5F9]/80">
                               {activeDetail.overview}
                             </p>
                           </div>
