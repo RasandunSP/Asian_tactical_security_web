@@ -56,6 +56,19 @@
 html {
   background-color: var(--background);
   color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Offset anchor scroll for sticky navbar */
+section[id],
+div[id] {
+  scroll-margin-top: 5rem;
 }
 
 html:not(.dark) {

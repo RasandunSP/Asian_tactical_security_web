@@ -102,6 +102,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="dark">
       <head>
         <ThemeScript />
+        <link rel="icon" href="/TST logo/TST white.png" />
+        <link rel="apple-touch-icon" href="/TST logo/TST white.png" />
       </head>
       <body className={`${stardosStencil.variable} ${inter.variable} antialiased`}>
         <ThemeProvider
