@@ -27,7 +27,7 @@ const team = [
     image: "/Hero_caro/Team/Vijini%20-%20Sec.jpeg",
   },
   {
-    name: "Mrs Shamali",
+    name: "Mrs Shamali Salgado",
     role: "Head of Corporate Communications",
     bio: "Oversees corporate communications and stakeholder coordination for training programs and partnerships.",
     image: "/Hero_caro/Team/Head of corporate comms.png",
