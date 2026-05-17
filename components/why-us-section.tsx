@@ -18,7 +18,7 @@ const highlights = [
     title: "Practical, not theoretical training",
     description:
       "Scenario-based, hands-on learning built for real-world readiness rather than classroom-only concepts.",
-    image: "/Hero_caro/WhatsApp Image 2026-04-11 at 18.05.22.jpeg",
+    image: "/Hero_caro/WhatsApp Image 2026-04-30 at 18.26.39.jpeg",
   },
   {
     title: "Safety, legality & effectiveness",

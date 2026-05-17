@@ -11,7 +11,7 @@ const team = [
   {
     name: "Mr Sathis Thiramunige",
     role: "CEO",
-    bio: "Karate (5th Dan), Krav Maga & Kapap (5th Dan), Kyusho pressure-point specialist, and Kapap Israel Master with multiple international instructor certifications.",
+    bio: "Karate (5th Dan), Krav Maga & Kapap (5th Dan), Kyusho pressure-point specialist, and multiple international instructor certifications.",
     image: "/Hero_caro/Team/CEO.png",
   },
   // {
